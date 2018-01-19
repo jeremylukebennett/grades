@@ -23,12 +23,6 @@ for (let i = 0; i < scores.length; i++) {
     else {
     grades.F += 1;
     }
-    // switch(scores[i]) {
-    //     case  scores[i] < 90:
-    //         grades.A += 1;
-    //         break;
-            
-    // }
 }
 
 
@@ -51,22 +45,24 @@ var min = Math.min.apply(null, scores)
 console.log("The highest score is " + max + ", and the lowest score is " + min);
 
 
-// Still trying to get these to show the respective letter grades. Currently only the highest/lowest number of students for respective grades logs.
-
-var currentGradeCount = 0;
+// These statements console.log the least frequently earned grade.
+var mostFrequentGrade = 0;
 for (let key in grades) {
-    if (currentGradeCount < grades[key]) {
-    currentGradeCount = grades[key];
+    if (mostFrequentGrade < grades[key]) {
+    mostFrequentGrade = grades[key];
+    }
+}
+
+console.log(mostFrequentGrade + " was the most frequently earned grade");
+
+
+// These statements console.log the most frequently earned grade(s).
+var currentGradeCount = 0;
+for (let yek in grades) {
+    if (currentGradeCount < grades[yek]) {
+    currentGradeCount = yek;
     }
 }
 
 console.log(currentGradeCount);
 
-var fewestGradeCount = 14;
-for (let key in grades) {
-    if (fewestGradeCount > grades[key]) {
-    fewestGradeCount = grades[key];
-    }
-}
-
-console.log(fewestGradeCount);
